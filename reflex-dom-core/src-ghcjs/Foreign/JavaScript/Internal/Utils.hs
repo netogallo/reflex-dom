@@ -10,7 +10,7 @@ module Foreign.JavaScript.Internal.Utils
 
 import GHCJS.Concurrent
 import GHCJS.DOM.Types (JSM, JSVal, RequestAnimationFrameCallback (..))
-#if __GLASGOW_HASKELL__ < 965
+#if __GLASGOW_HASKELL__ >= 908
 import GHC.JS.Foreign.Callback (releaseCallback)
 #else
 import GHCJS.Foreign.Callback (releaseCallback)

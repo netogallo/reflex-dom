@@ -35,7 +35,7 @@ import qualified GHCJS.Buffer as JS
 import GHCJS.DOM.Types (MonadJSM)
 import qualified GHCJS.DOM.Types as JS
 import qualified GHCJS.Foreign as JS
-#if __GLASGOW_HASKELL__ < 965
+#if __GLASGOW_HASKELL__ >= 908
 import qualified GHC.JS.Foreign.Callback as JS
 import qualified GHC.JS.Foreign.Callback (Callback (..))
 #else
