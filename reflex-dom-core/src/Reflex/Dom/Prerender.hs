@@ -22,6 +22,10 @@ module Reflex.Dom.Prerender
        , PrerenderBaseConstraints
        ) where
 
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad ((<=<), join, void)
+import Control.Monad.Fix (MonadFix(..))
+#endif
 import Control.Monad.Primitive (PrimMonad(..))
 import Control.Monad.Reader
 import Control.Monad.Ref (MonadRef(..), MonadAtomicRef(..))

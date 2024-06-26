@@ -1,4 +1,5 @@
 {-# LANGUAGE ConstraintKinds #-}
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE EmptyDataDecls #-}
@@ -18,7 +19,13 @@ module Reflex.Dom.Builder.Static where
 import Data.IORef (IORef)
 import Blaze.ByteString.Builder.Html.Utf8
 import Control.Lens hiding (element)
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad (forM, forM_, join, void)
+#endif
 import Control.Monad.Exception
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad.Fix (MonadFix)
+#endif
 import Control.Monad.Identity
 import Control.Monad.Primitive
 import Control.Monad.Ref

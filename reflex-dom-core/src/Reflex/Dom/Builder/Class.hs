@@ -47,6 +47,9 @@ import Reflex.Requester.Base
 
 import qualified Control.Category
 import Control.Lens hiding (element)
+#if MIN_VERSION_base(4,19,0)
+import Control.Monad.Fix (MonadFix)
+#endif
 import Control.Monad.Reader
 import qualified Control.Monad.State as Lazy
 import Control.Monad.State.Strict

@@ -19,6 +19,9 @@ module Reflex.Dom.Widget.Input (module Reflex.Dom.Widget.Input, def, (&), (.~)) 
 import Prelude
 
 import Control.Lens hiding (element, ix)
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad (guard)
+#endif
 import Control.Monad.Fix
 import Control.Monad.IO.Class
 import Control.Monad.Reader

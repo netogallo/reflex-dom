@@ -121,6 +121,10 @@ import Control.Concurrent
 import Control.Exception (bracketOnError)
 import Control.Lens (Identity(..), imapM_, iforM_, (^.), makeLenses)
 import Control.Monad.Exception
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad.Fix (MonadFix)
+import Control.Monad ((<=<), forM, forM_, join, void, when)
+#endif
 import Control.Monad.Primitive
 import Control.Monad.Reader
 import Control.Monad.Ref

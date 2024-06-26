@@ -1,4 +1,5 @@
 {-# LANGUAGE ConstraintKinds #-}
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE DataKinds #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
@@ -71,6 +72,9 @@ import Reflex.PostBuild.Class
 import Reflex.Workflow
 
 import Control.Arrow
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad.Fix (MonadFix)
+#endif
 import Control.Lens hiding (children, element)
 import Control.Monad.Reader hiding (forM, forM_, mapM, mapM_, sequence, sequence_)
 import Data.Align

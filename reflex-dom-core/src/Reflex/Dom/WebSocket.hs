@@ -40,7 +40,11 @@ import Control.Concurrent
 import Control.Concurrent.STM
 import Control.Exception
 import Control.Lens
+#if MIN_VERSION_base(4,16,0)
+import Control.Monad
+#else
 import Control.Monad hiding (forM, forM_, mapM, mapM_, sequence)
+#endif
 import Control.Monad.IO.Class
 import Control.Monad.State
 import Data.Aeson
