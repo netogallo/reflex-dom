@@ -1,7 +1,6 @@
 {-# LANGUAGE CPP #-}
 {-# LANGUAGE ForeignFunctionInterface #-}
 {-# LANGUAGE JavaScriptFFI #-}
-{-# LANGUAGE OverloadedStrings #-}
 
 module Foreign.JavaScript.Internal.Utils
   ( synchronously
